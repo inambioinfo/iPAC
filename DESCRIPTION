@@ -1,0 +1,13 @@
+Package: iPAC
+Type: Package
+Title: Identification of Protein Amino acid Clustering
+Version: 0.99.3
+Date: 2012-06-06
+Author: Gregory Ryslik, Hongyu Zhao
+Maintainer: Gregory Ryslik <gregory.ryslik@yale.edu>
+Description: iPAC is a novel tool to identify somatic amino acid mutation clustering within proteins while taking into account protein structure.
+biocViews: Bioinformatics, Clustering, BiologicalDomains, Proteomics
+License: GPL-2
+Depends: R(>= 2.15),gdata, scatterplot3d, Biostrings, multtest
+Repository: Bioconductor
+Packaged: 2012-08-01 15:38:33 UTC; greg
