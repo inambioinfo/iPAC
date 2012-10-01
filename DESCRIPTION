@@ -1,7 +1,7 @@
 Package: iPAC
 Type: Package
 Title: Identification of Protein Amino acid Clustering
-Version: 0.99.3
+Version: 1.0.0
 Date: 2012-06-06
 Author: Gregory Ryslik, Hongyu Zhao
 Maintainer: Gregory Ryslik <gregory.ryslik@yale.edu>
