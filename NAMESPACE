@@ -1,1 +1,1 @@
-export(ClusterFind,get.AASeq,get.AlignedPositions,get.Positions,get.SingleLetterCode,nmc)
+export(ClusterFind,get.AASeq,get.AlignedPositions,get.Positions,get.SingleLetterCode,nmc,Plot.Protein.Linear, get.Remapped.Order)
