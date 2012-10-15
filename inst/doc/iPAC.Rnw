@@ -127,7 +127,7 @@ KRAS.Positions$Positions[1:10,]
 @
 \begin{Schunk}
 \begin{Soutput}
-   Residue AtomCount SideChain XCoord  YCoord ZCoord
+   Residue Can.Count SideChain XCoord  YCoord ZCoord
 1      MET         1         A 62.935  97.579 30.223
 2      THR         2         A 63.155  95.525 27.079
 3      GLU         3         A 65.289  96.895 24.308
@@ -196,7 +196,7 @@ PIK3CA.Positions$Positions[1:10,]
 @
 \begin{Schunk}
 \begin{Soutput}
-   Residue AtomCount SideChain XCoord YCoord  ZCoord
+   Residue Can.Count SideChain XCoord YCoord  ZCoord
 1      GLY         8         A 88.344 61.306 112.918
 2      GLU         9         A 90.119 58.543 111.029
 3      LEU        10         A 92.954 56.400 109.709
@@ -275,7 +275,7 @@ PIK3CAV2.Positions$Positions[1:10,]
 @
 \begin{Schunk}
 \begin{Soutput}
-   Residue AtomCount SideChain XCoord YCoord  ZCoord
+   Residue Can.Count SideChain XCoord YCoord  ZCoord
 1      GLY         8         A 88.344 61.306 112.918
 2      GLU         9         A 90.119 58.543 111.029
 3      LEU        10         A 92.954 56.400 109.709
