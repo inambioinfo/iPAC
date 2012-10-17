@@ -9,7 +9,7 @@
   }
 }
 
-\section{Release Notes for version 1.1.1- 2012.10.14}{
+\section{Release Notes for version 1.1.2- 2012.10.14}{
   \itemize{
     \item Included get.Remapped.Order() function that displays the reshuffled amino acids after culling.
     \item Set the "AtomCount" column label to display "Can.Count" when the get.Positions function is called to be consistent with the get.AlignedPositions function.
