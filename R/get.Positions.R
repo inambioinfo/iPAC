@@ -67,7 +67,7 @@ function(CIF.File.Location, Fasta.File.Location, chain.required = "A",RequiredMo
   Final.Position.Matrix<- data.frame(PDBXPoly$AtomMatrix$Residue, as.numeric(PDBXPoly$AtomMatrix$aligned.positions), 
                                      PDBXPoly$AtomMatrix$SideChain, as.numeric(PDBXPoly$AtomMatrix$XCoord), 
                                      as.numeric(PDBXPoly$AtomMatrix$YCoord), as.numeric(PDBXPoly$AtomMatrix$ZCoord))
-  colnames(Final.Position.Matrix)<-c("Residue","AtomCount","SideChain","XCoord","YCoord","ZCoord")
+  colnames(Final.Position.Matrix)<-c("Residue","Can.Count","SideChain","XCoord","YCoord","ZCoord")
   
   return.value <- list(Positions = Final.Position.Matrix, External.Mismatch=Mismatch, PDB.Mismatch=PDBXPoly$Diffs.Matrix,Result=Result)
   return(return.value)
