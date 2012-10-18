@@ -7,7 +7,8 @@ Plot.Protein.Linear
 Plot.Protein.Linear creates a visual representation of the protein reordering by showing the protein in linear form and setting the color based upon the remapped amino acid position.
 }
 \usage{
-Plot.Protein.Linear(path, colCount, cex=0.5, height = 1,width = 1, color.palette = "heat")
+Plot.Protein.Linear(path, colCount, cex=0.5, height = 1,width = 1, title = "Protein Reordering",
+					color.palette = "heat")
 }
 \arguments{
   \item{path}{
@@ -24,6 +25,9 @@ Plot.Protein.Linear(path, colCount, cex=0.5, height = 1,width = 1, color.palette
 }
   \item{width}{
 	The width of the resulting box that outlines the amino acid number.
+}
+  \item{title}{
+	The title that you want the graph to display.
 }
   \item{color.palette}{
 	One of of the standard color palettes available in R. The options are  "heat", "gray", "topo", and "cm".

@@ -1,4 +1,4 @@
-Plot.Protein.Linear <- function(path, colCount, cex=0.5, height = 1,width = 1, color.palette = "heat"){
+Plot.Protein.Linear <- function(path, colCount, cex=0.5, height = 1,width = 1, title = "Protein Reordering", color.palette = "heat"){
   total<-length(path)
   if(color.palette == "heat"){
     pal <- rev(heat.colors(total))
@@ -18,7 +18,7 @@ Plot.Protein.Linear <- function(path, colCount, cex=0.5, height = 1,width = 1, c
   par(xpd = TRUE)
   plot( c(1,colCount), c(0,rowCount), type="n", ylab="", xlab="",
         axes=FALSE, ylim=c(rowCount,0))
-  title("Protein Reordering")
+  title(title)
   
   for (j in 0:(rowCount-1))
   {

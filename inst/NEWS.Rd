@@ -16,3 +16,9 @@
 	\item Included a "Plot.Protein.Linear" function that helps visualize the protein rearrangements.
 	}
 }
+
+\section{Release Notes for version 1.1.2- 2012.10.17}{
+  \itemize{
+    \item You can now specify the title of your choice to the "Plot.Protein.Linear" function.
+	}
+}
