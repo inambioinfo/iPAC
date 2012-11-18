@@ -62,7 +62,7 @@ ClusterFind(mutation.data, position.data, method = "MDS", alpha = 0.05,
 }
 }
 \details{
- The linear method fixes a point, defined by the parameters \emph{OriginX}, \emph{OriginY}, \emph{OriginZ}, and then calculates the distance from each amino acid to that point. The graph produced by \emph{ClusterFind} (if requested), shows these distances as dotted green lines. The length of the green line is used to reorder the protein, with the amino acid that corresponds to the shortest green line being ordered first and the amino acid corresponding to the longest green line being ordered last.
+ The linear method fixes a point, defined by the parameters \emph{OriginX}, \emph{OriginY}, \emph{OriginZ}, and then calculates the distance from each amino acid to that point. The graph produced by \emph{ClusterFind} (if requested), shows these distances as dotted green lines. The length of the green line is used to reorder the protein, with the amino acid that corresponds to the shortest green line being ordered first and the amino acid corresponding to the longest green line being ordered last. 
  
  Additional methods will be available in future versions of this package. 
 }
@@ -83,6 +83,8 @@ If you want the graph to just display on a new R graphics devices without saving
 If you are running this algorithm on a terminal with no GUI (such as a computational cluster), set \emph{Show.Graph} to "N" as R will not be able to open a new graphics device. However, you can still have the graphics saved for later viewing by setting the \emph{Graph.Output.Path} and \emph{Graph.File.Name} variables. 
 
 If \emph{ClusterFind} displays the message "Error in 0:(n - j) : NA/NaN argument", this most likely signifies that after removing the amino acids for which there is no positional data, the mutation data matrix is all 0's. For instance, if all the mutations occured on the 5th amino acid in the protein, and we did not have 3D positional information for that amino acid, the mutation data for the remaining positions would be all 0's. An error message in this situation will be displayed in the results section as well. In such cases, the user should run the original NMC algorithm only (see \emph{nmc}) or select an alternative protein structure.
+
+When unmapping back to the original space, the end points of the cluster in the mapped space are used as the endpoints of the cluster in the unmapped space.
 }
 \examples{
 #Extract the data from a CIF file and match it up with the canonical protein sequence.
