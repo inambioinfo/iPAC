@@ -22,3 +22,8 @@
     \item You can now specify the title of your choice to the "Plot.Protein.Linear" function.
 	}
 }
+\section{Release Notes for Version 1.1.3 - 2013.06.16}{
+  \itemize{
+    \item COSMIC changed it's display of FASTA sequences. Examples changed to work with the Uniprot Site.
+  }
+}

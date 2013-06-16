@@ -7,8 +7,8 @@ Plot.Protein.Linear
 Plot.Protein.Linear creates a visual representation of the protein reordering by showing the protein in linear form and setting the color based upon the remapped amino acid position.
 }
 \usage{
-Plot.Protein.Linear(path, colCount, cex=0.5, height = 1,width = 1, title = "Protein Reordering",
-					color.palette = "heat")
+Plot.Protein.Linear(path, colCount, cex=0.5, height = 1,width = 1, 
+          title = "Protein Reordering", color.palette = "heat")
 }
 \arguments{
   \item{path}{
@@ -45,7 +45,7 @@ This method is still in beta. If any bugs found, please email the package author
 #Extract the data from a CIF file and match it up with the canonical protein sequence.
 #Here we use the 3GFT structure from the PDB, which corresponds to the KRAS protein.
 CIF<-"http://www.pdb.org/pdb/files/3GFT.cif"
-Fasta<-"http://www.sanger.ac.uk/perl/genetics/CGP/cosmic_sequence?ln=KRAS;format=aa"
+Fasta<-"http://www.uniprot.org/uniprot/P01116-2.fasta"
 KRAS.Positions<-get.Positions(CIF,Fasta, "A")
 
 #Load the mutational data for KRAS. Here the mutational data was obtained from the

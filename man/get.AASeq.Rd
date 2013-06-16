@@ -21,8 +21,8 @@ The first line in the file being processed must begin with a ">". If the ending 
 	An ordered list of amino acids in the protein. Each element of the list represents an amino acid.
 }  
 \examples{
-#Reads the amino acid sequence for KRAS from COSMIC.
-get.AASeq("http://www.sanger.ac.uk/perl/genetics/CGP/cosmic_sequence?ln=KRAS;format=aa")
+#Reads the amino acid sequence for KRAS from Uniprot
+get.AASeq("http://www.uniprot.org/uniprot/P01116-2.fasta")
 }
 \keyword{Amino Acids}
 \keyword{FASTA}

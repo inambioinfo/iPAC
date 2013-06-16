@@ -111,7 +111,7 @@ Code Example 2: Extracting positions using the get.Positions function
 <<label=Example2,echo= true, eval = FALSE>>=
 library(iPAC)
 CIF<-"http://www.pdb.org/pdb/files/3GFT.cif"
-Fasta<-"http://www.sanger.ac.uk/perl/genetics/CGP/cosmic_sequence?ln=KRAS;format=aa"
+Fasta<-"http://www.uniprot.org/uniprot/P01116-2.fasta"
 KRAS.Positions<-get.Positions(CIF, Fasta, "A")
 names(KRAS.Positions)
 @
@@ -175,87 +175,9 @@ KRAS.Positions$Result
 Observe that the final element in \emph{Code Example 2} is ``OK". That is because the only mismatched residue (at position 61), was documented in the CIF file as well.
 Thus it is considered a ``reconciled" mismatch. It is up to the user to decide if they want to include it in the position sequence that is passed on to the \emph{ClusterFind} method or to remove it.
 
-\begin{verbatim}
-Code Example 3: Another example of the get.Positions function
-\end{verbatim}
-<<label=Example3, echo= true,eval=FALSE>>=
-CIF<- "http://www.pdb.org/pdb/files/2RD0.cif"
-Fasta<-"http://www.sanger.ac.uk/perl/genetics/CGP/cosmic_sequence?ln=PIK3CA;format=aa"
-PIK3CA.Positions<-get.Positions(CIF,Fasta , "A")
-names(PIK3CA.Positions)
-@
-\begin{Schunk}
-\begin{Soutput}
-[1] "Positions"         "External.Mismatch" "PDB.Mismatch"     
-[4] "Result"           
-\end{Soutput}
-\end{Schunk}
-
-<<label=Example3a, echo= true,eval=FALSE>>=
-PIK3CA.Positions$Positions[1:10,]
-@
-\begin{Schunk}
-\begin{Soutput}
-   Residue Can.Count SideChain XCoord YCoord  ZCoord
-1      GLY         8         A 88.344 61.306 112.918
-2      GLU         9         A 90.119 58.543 111.029
-3      LEU        10         A 92.954 56.400 109.709
-4      TRP        11         A 93.105 53.251 107.542
-5      GLY        12         A 91.616 50.221 109.372
-6      ILE        13         A 90.825 52.285 112.474
-7      HIS        14         A 87.540 54.192 112.953
-8      LEU        15         A 88.806 56.633 115.544
-9      MET        16         A 92.435 57.520 116.178
-10     PRO        17         A 93.481 57.378 119.852
-\end{Soutput}
-\end{Schunk}
-
-<<label=Example3b, echo= true,eval=FALSE>>=
-PIK3CA.Positions$External.Mismatch
-@
-\begin{Schunk}
-\begin{Soutput}
-   PDB.Residue Canonical.Residue Canonical.Num
-1            I                 V            43
-2            N                 H           170
-3            K                 R           187
-4            M                 K           286
-5            L                 M           287
-6            S                 R           332
-7            V                 L           346
-8            K                 R           723
-9            F                 L           751
-10           E                 K           767
-\end{Soutput}
-\end{Schunk}
-
-
-<<label=Example3c, echo= true,eval=FALSE>>=
-PIK3CA.Positions$PDB.Mismatch
-@
-\begin{Schunk}
-\begin{Soutput}
-[1] PDB.Residue       Canonical.Residue Seq_num           Remark           
-<0 rows> (or 0-length row.names)
-\end{Soutput}
-\end{Schunk}
-
-<<label=Example3d, echo= true,eval=FALSE>>=
-PIK3CA.Positions$Result
-@
-
-\begin{Schunk}
-\begin{Soutput}
-[1] "Failure"
-\end{Soutput}
-\end{Schunk}
-
-
-Observe that the final result in \emph{Code Example 3} is ``FAILURE". For PIK3CA there were 10 mismatched residues between the CIF file and the
-canonical sequence. However, none of these residues are explained within the actual CIF file. Since the mismatches are not reconciled, the function returns a failure status.
 
 \begin{verbatim}
-Code Example 4: Final example of the get.Positions function
+Code Example 3: Final example of the get.Positions function
 \end{verbatim}
 <<label = Example4, echo= true, eval=FALSE>>=
 CIF <- "http://www.pdb.org/pdb/files/2RD0.cif"
@@ -314,17 +236,17 @@ PIK3CAV2.Positions$Result
 \end{Soutput}
 \end{Schunk}
 
-Observe that the final result in \emph{Code Example 4} is ``OK". Here we use a different file location for the canonical sequence -- the UNIPROT database. Here, the canonical sequence is slightly different and matches up exactly to the extracted positions. As there is only 1 isoform listed on UNIPROT for PIK3CA we suggest using the same source for both the mutational and canonical position information. For example, if your mutation data was obtained from COSMIC, you should use COSMIC to get the canonical protein sequence. 
+Observe that the final result in \emph{Code Example 3} is ``OK". Here we use a different file location for the canonical sequence -- the UNIPROT database. Here, the canonical sequence is slightly different and matches up exactly to the extracted positions. As there is only 1 isoform listed on UNIPROT for PIK3CA we suggest using the same source for both the mutational and canonical position information. For example, if your mutation data was obtained from COSMIC, you should use COSMIC to get the canonical protein sequence. 
 
-Let us now consider the \emph{get.AlignedPositions} function. This function automatically drops positions that do not match up. If you consider the results in \emph{Code Example 5} below with the results of those in \emph{Code Example 4} above, one sees that the 10 mismatched positions are automatically cut from the aligned sequence.
+Let us now consider the \emph{get.AlignedPositions} function. This function automatically drops positions that do not match up.
 
 
 \begin{verbatim}
-Code Example 5: Extracting positions using the get.AlignedPositions function
+Code Example 4: Extracting positions using the get.AlignedPositions function
 \end{verbatim}
 <<label =  Example5, echo= true,eval=FALSE>>=
 CIF<- "http://www.pdb.org/pdb/files/2RD0.cif"
-Fasta<-"http://www.sanger.ac.uk/perl/genetics/CGP/cosmic_sequence?ln=PIK3CA;format=aa"
+Fasta <- "http://www.uniprot.org/uniprot/P42336.fasta"
 PIK3CAV3.Positions<-get.AlignedPositions(CIF,Fasta , "A")
 names(PIK3CAV3.Positions)
 @
@@ -391,13 +313,13 @@ We begin by first running the algorithm on KRAS using the MDS method followed by
 
 
 \begin{verbatim}
-Code Example 6: Running the ClusterFind method with a MDS mapping
+Code Example 5: Running the ClusterFind method with a MDS mapping
 \end{verbatim}
 <<label=Example6,echo=true, fig=TRUE,eval = FALSE>>=
 #Extract the data from a CIF file and match it up with the canonical protein sequence.
 #Here we use the 3GFT structure from the PDB, which corresponds to the KRAS protein.
 CIF<-"http://www.pdb.org/pdb/files/3GFT.cif"
-Fasta<-"http://www.sanger.ac.uk/perl/genetics/CGP/cosmic_sequence?ln=KRAS;format=aa"
+Fasta<-"http://www.uniprot.org/uniprot/P01116-2.fasta"
 KRAS.Positions<-get.Positions(CIF,Fasta, "A")
 
 #Load the mutational data for KRAS. Here the mutational data was obtained from the
@@ -475,13 +397,13 @@ $MissingPositions
 \includegraphics{iPAC-Example6}
 
 \begin{verbatim}
-Code Example 7: Running the ClusterFind method with a Linear mapping
+Code Example 6: Running the ClusterFind method with a Linear mapping
 \end{verbatim}
 <<label=Example7,echo=true, fig=TRUE,eval=FALSE>>=
 #Extract the data from a CIF file and match it up with the canonical protein sequence.
 #Here we use the 3GFT structure from the PDB, which corresponds to the KRAS protein.
 CIF<-"http://www.pdb.org/pdb/files/3GFT.cif"
-Fasta<-"http://www.sanger.ac.uk/perl/genetics/CGP/cosmic_sequence?ln=KRAS;format=aa"
+Fasta<-"http://www.uniprot.org/uniprot/P01116-2.fasta"
 KRAS.Positions<-get.Positions(CIF,Fasta, "A")
 
 #Load the mutational data for KRAS. Here the mutational data was obtained from the
@@ -557,11 +479,11 @@ $MissingPositions
 \end{Schunk}
 \includegraphics{iPAC-Example7}
 
-As can be seen from \emph{Code Examples 6} and \emph{7} above, the \emph{ClusterFind} method returns a list of four elements. The first element, \$Remapped, displays all the clusters found while taking into account the 3D structure of the protein by utilizing either the linear or MDS methodology. The next element, \$OriginalCulled, displays all the clusters found using the original NMC algorithm after removing all the amino acids for which we do not have $(x,y,z)$ positions. The \$Original element displays all the clusters found using the NMC algorithm without removing the amino acids for which we do not have 3D positional information. 
+As can be seen from \emph{Code Examples 5} and \emph{6} above, the \emph{ClusterFind} method returns a list of four elements. The first element, \$Remapped, displays all the clusters found while taking into account the 3D structure of the protein by utilizing either the linear or MDS methodology. The next element, \$OriginalCulled, displays all the clusters found using the original NMC algorithm after removing all the amino acids for which we do not have $(x,y,z)$ positions. The \$Original element displays all the clusters found using the NMC algorithm without removing the amino acids for which we do not have 3D positional information. 
 
 If the user wants to compare the results generated when taking protein structure into account versus those when protein structure is ignored, it is recommended that the user compare the matrices in \$Remapped versus \$OriginalCulled. In this way, the user is considering the differences that arise strictly from the protein structure as the amino acids with missing 3D positions have been removed prior to the analysis.
 
-Finally, the \$MissingPositions element displays a matrix of all the amino acids for which we had mutational data but for which we did not have positional data. For instance, in \emph{Code Example 6}, the mutation data matrix had 188 columns while we were able to extract positional information only for amino acids 1-167. Furthermore, amino acid 61 was excluded from the final position matrix when the \emph{get.AlignedPositions} function was run as the amino acid listed in the CIF file did not match the canonical sequence in the FASTA file. As such, the \$MissingPositions element has a matrix of 2 rows as follows:
+Finally, the \$MissingPositions element displays a matrix of all the amino acids for which we had mutational data but for which we did not have positional data. For instance, in \emph{Code Example 5}, the mutation data matrix had 188 columns while we were able to extract positional information only for amino acids 1-167. Furthermore, amino acid 61 was excluded from the final position matrix when the \emph{get.AlignedPositions} function was run as the amino acid listed in the CIF file did not match the canonical sequence in the FASTA file. As such, the \$MissingPositions element has a matrix of 2 rows as follows:
 
 \begin{verbatim}
 $MissingPositions
