@@ -27,3 +27,9 @@
     \item COSMIC changed it's display of FASTA sequences. Examples changed to work with the Uniprot Site.
   }
 }
+
+\section{Release Notes for Version 1.5.2 - 2013.06.26}{
+  \itemize{
+    \item Updated file to be consistent with Bioconductor version numbering. Also fixed a rare bug that gave an error if every residue aligned between mutational and positional data.
+  }
+}
