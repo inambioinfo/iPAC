@@ -9,7 +9,7 @@ PIK3CA.Mutations
 }
 \usage{data(PIK3CA.Mutations)}
 \format{
-  There are 96 rows, each representing a sampl mutation and 1068 colums -- one for each amino acid in the protein.
+  There are 96 rows, each representing a sample mutation and 1068 colums -- one for each amino acid in the protein.
 }
 
 \source{
