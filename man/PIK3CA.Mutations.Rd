@@ -5,7 +5,7 @@
 PIK3CA.Mutations
 }
 \description{
- A data frame of the verified somatic mutations for PIK3CA from COSMIC.
+ A matrix of the verified somatic mutations for PIK3CA from COSMIC.
 }
 \usage{data(PIK3CA.Mutations)}
 \format{

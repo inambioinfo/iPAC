@@ -5,7 +5,7 @@
 KRAS.Mutations
 }
 \description{
- A data frame of the verified somatic mutations for KRAS from the COSMIC database.
+ A matrix of the verified somatic mutations for KRAS from the COSMIC database.
 }
 \usage{data(KRAS.Mutations)}
 \format{
